@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("./images/Japan.jpg"), #000;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+.wrapper {
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  & a {
+    color: #efefef;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & .alert-box {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+    max-width: 500px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    display: none; /* hidden by default */
+    z-index: 9999; /* make sure it floats above everything */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  & .input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 20px 0;
+
+    & label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 16px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    & input {
+      width: 100%;
+      height: 40px;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: #fff;
+      padding: 0 5px;
+    }
+
+    & input:focus ~ label,
+    & input:valid ~ label {
+      top: -5px;
+      left: 0;
+      font-size: 12px;
+      color: #ddd;
+    }
+  }
+
+  & .forget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 35px 0;
+    color: #fff;
+
+    & #remember {
+      accent-color: #fff;
+    }
+
+    & label {
+      display: flex;
+      align-items: center;
+
+      & p {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  & .register {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+  }
+}
+button {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 2px solid transparent;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
